@@ -12,7 +12,7 @@ type Config struct {
 	VideoID  string
 }
 
-func LOad() *Config {
+func Load() *Config {
 	if err := godotenv.Load(); err != nil {
 		slog.Error("Не прочитали .env", "error", err)
 		os.Exit(1)

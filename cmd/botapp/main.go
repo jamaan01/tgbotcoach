@@ -4,6 +4,7 @@ import (
 	"context"
 	"log/slog"
 	"os"
+	"tgbotcoach/internal/handler"
 	"tgbotcoach/internal/telegram"
 
 	th "github.com/mymmrac/telego/telegohandler"
@@ -30,6 +31,7 @@ func main() {
 		os.Exit(1)
 	}
 
+	handler.HadlerStart(bh, bot)
 	bh.Start()
 	defer bh.Stop()
 	defer cancel()

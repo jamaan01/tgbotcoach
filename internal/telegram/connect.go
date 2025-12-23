@@ -9,7 +9,7 @@ import (
 )
 
 func NewBot() *telego.Bot {
-	bot, err := telego.NewBot(config.LOad().BotToken, telego.WithDefaultDebugLogger())
+	bot, err := telego.NewBot(config.Load().BotToken, telego.WithDefaultDebugLogger())
 	if err != nil {
 		slog.Error("Не удалось создать бота", "error", err)
 		os.Exit(1)
