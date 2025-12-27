@@ -4,6 +4,7 @@ import (
 	"context"
 	"log/slog"
 	"os"
+	"tgbotcoach/internal/config"
 	"tgbotcoach/internal/handler"
 	"tgbotcoach/internal/telegram"
 
@@ -31,7 +32,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	handler.HadlerStart(bh, bot)
+	handler.HadlerStart(bh, bot, config.Load().VideoID)
 	bh.Start()
 	defer bh.Stop()
 	defer cancel()
